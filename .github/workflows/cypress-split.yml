@@ -14,6 +14,7 @@ jobs:
           SPLIT_INDEX: ${{ strategy.job-index }}
         run: |
           echo ...testing "$SPLIT" "$SPLIT_INDEX" testing... 🧪
+          npx cypress run --env split="$SPLIT",splitIndex="$SPLIT_INDEX"
       # - run: echo "🍏 it works!"
 
 # strategy:
