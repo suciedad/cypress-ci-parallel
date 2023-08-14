@@ -1,0 +1,24 @@
+name: Parallel cypress tests with cypress-split
+on: [push]
+jobs:
+  cypress-split:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🍏 it works!
+        env:
+          TEST_ID: "ZXC"
+        run: |
+          echo ...testing "$TEST_ID" testing... 🧪
+      # - run: echo "🍏 it works!"
+
+# strategy:
+#   fail-fast: false
+#   matrix:
+#     containers: [1, 2, 3]
+# steps:
+#   - name: Run split Cypress tests 🧪
+#     uses: cypress-io/github-action@v5
+#     # pass the machine index and the total number
+#     env:
+#       SPLIT: ${{ strategy.job-total }}
+#       SPLIT_INDEX: ${{ strategy.job-index }}
