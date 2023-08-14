@@ -3,12 +3,17 @@ on: [push]
 jobs:
   cypress-split:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3]
     steps:
-      - name: 🍏 it works!
+      - name: Run split Cypress tests 🧪
         env:
-          TEST_ID: "ZXC"
+          SPLIT: ${{ strategy.job-total }}
+          SPLIT_INDEX: ${{ strategy.job-index }}
         run: |
-          echo ...testing "$TEST_ID" testing... 🧪
+          echo ...testing "$SPLIT" "$SPLIT_INDEX" testing... 🧪
       # - run: echo "🍏 it works!"
 
 # strategy:
